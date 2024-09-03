@@ -3,6 +3,8 @@ name: Flask CI
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
@@ -42,5 +44,3 @@ jobs:
           echo "Contents of Working Directory: $(ls -l)"
           echo "Contents of site-packages: $(ls -l myworld/lib/python*/site-packages)"
 
-      - name: Run tests
-        run: python app.py
